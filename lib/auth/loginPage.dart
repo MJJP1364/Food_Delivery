@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/widgets/input_text.dart';
 import 'package:get/get.dart';
 import '../Themes/custom_theme.dart';
+
 import '../Themes/theme_controller.dart';
 import '../widgets/myButton.dart';
 
@@ -10,8 +11,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HomeController controller = Get.put(HomeController());
-    final _formKey = GlobalKey<FormState>();
+    final controller = Get.put(ThemeController());
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
         ],
       ),
       body: Form(
-        key: _formKey,
+        key: formKey,
         child: Center(
           child: SingleChildScrollView(
             child: Column(

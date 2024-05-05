@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class HomeController extends GetxController {
+class ThemeController extends GetxController {
   // initializing with the current theme of the device
   Rx<ThemeMode> currentTheme = ThemeMode.system.obs;
   RxBool theme = false.obs;
