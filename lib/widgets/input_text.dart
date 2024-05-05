@@ -7,7 +7,7 @@ class InputText extends StatelessWidget {
     required this.controller,
     required this.obsecured,
     required this.lable,
-    required this.icon,
+    this.icon,
     this.sufixe,
     this.onTap,
   });
@@ -15,7 +15,7 @@ class InputText extends StatelessWidget {
   final TextEditingController controller;
   final bool? obsecured;
   final String lable;
-  final IconData icon;
+  final IconData? icon;
   final IconData? sufixe;
   final VoidCallback? onTap;
 

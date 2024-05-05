@@ -1,36 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/auth/register_page.dart';
-import 'package:food_delivery/widgets/input_text.dart';
 import 'package:get/get.dart';
-import '../Themes/custom_theme.dart';
-import '../Themes/theme_controller.dart';
+
+import '../widgets/input_text.dart';
 import '../widgets/myButton.dart';
 import 'auth_controller.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ThemeController());
     final authController = Get.put(AuthController());
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Page'),
-        actions: [
-          Obx(() {
-            return Switch(
-              value: controller.theme.value,
-              onChanged: (value) {
-                controller.switchTheme();
-                Get.changeThemeMode(controller.currentTheme.value);
-              },
-              activeColor: CustomTheme.white,
-            );
-          })
-        ],
+        title: const Text('Register Page'),
       ),
       body: Form(
         key: formKey,
@@ -46,12 +31,28 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 Text(
-                  'Food Delivery App',
+                  'Lets create an account for you',
                   style: TextStyle(
                       fontSize: 16,
                       color: Theme.of(context).colorScheme.inverseSurface),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
+                InputText(
+                  hint: 'Enter Name',
+                  controller: authController.nameController,
+                  lable: 'Name',
+                  obsecured: false,
+                  // icon: Icons.email,
+                ),
+                const SizedBox(height: 15),
+                InputText(
+                  hint: 'Enter full Name',
+                  controller: authController.fullNameController,
+                  lable: 'full name',
+                  obsecured: false,
+                  // icon: Icons.email,
+                ),
+                const SizedBox(height: 15),
                 InputText(
                   hint: 'Email',
                   controller: authController.emailController,
@@ -59,7 +60,7 @@ class LoginPage extends StatelessWidget {
                   obsecured: false,
                   icon: Icons.email,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 Obx(
                   () {
                     return InputText(
@@ -77,32 +78,33 @@ class LoginPage extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
+                Obx(
+                  () {
+                    return InputText(
+                      hint: 'Enter Comfrim Password',
+                      controller: authController.comfrimPasswordController,
+                      lable: 'comfrim password',
+
+                      icon: Icons.password_rounded,
+                      obsecured: authController.sufixIcon.value,
+                      onTap: authController.sufixIconMethod,
+                      // ignore: unrelated_type_equality_checks
+                      sufixe: authController.sufixIcon == false
+                          ? Icons.remove_red_eye
+                          : Icons.remove_red_eye_outlined,
+                    );
+                  },
+                ),
+                const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
                   height: 60,
                   child: MyButton(
                     onTap: () {},
-                    text: 'S I G N I N',
+                    text: 'S I G N U P',
                   ),
                 ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Not a member?'),
-                    TextButton(
-                      child: const Text(
-                        'Register Now',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      onPressed: () => Get.to(() => const RegisterPage(),
-                          duration: const Duration(milliseconds: 800),
-                          transition: Transition.rightToLeft,
-                          curve: Curves.easeIn),
-                    )
-                  ],
-                )
               ],
             ),
           ),
