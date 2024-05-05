@@ -12,8 +12,8 @@ class CustomTheme {
     useMaterial3: true,
     fontFamily: lightThemeFont,
     switchTheme: SwitchThemeData(
-      thumbColor:
-          MaterialStateProperty.resolveWith<Color>((states) => lightThemeColor),
+      thumbColor: MaterialStateProperty.resolveWith<Color>(
+          (states) => lightThemeColor), // 
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
@@ -24,7 +24,7 @@ class CustomTheme {
         color: black,
         fontSize: 23, //20
       ),
-      iconTheme: IconThemeData(color: lightThemeColor),
+      iconTheme: IconThemeData(color: lightThemeColor), //
       elevation: 0,
       actionsIconTheme: IconThemeData(color: lightThemeColor),
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -36,14 +36,14 @@ class CustomTheme {
 
   // dark theme
   static final darkTheme = ThemeData(
-    primaryColor: darkThemeColor,
+    primaryColor: darkThemeColor, //
     brightness: Brightness.dark,
     scaffoldBackgroundColor: const Color.fromARGB(255, 20, 20, 20),
     useMaterial3: true,
     fontFamily: darkThemeFont,
     switchTheme: SwitchThemeData(
-      trackColor:
-          MaterialStateProperty.resolveWith<Color>((states) => darkThemeColor),
+      trackColor: MaterialStateProperty.resolveWith<Color>(
+          (states) => darkThemeColor), //
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
@@ -56,7 +56,7 @@ class CustomTheme {
       ),
       iconTheme: IconThemeData(color: darkThemeColor),
       elevation: 0,
-      actionsIconTheme: IconThemeData(color: darkThemeColor),
+      actionsIconTheme: IconThemeData(color: darkThemeColor), //
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Color.fromARGB(255, 20, 20, 20),
         statusBarIconBrightness: Brightness.light,
@@ -66,7 +66,7 @@ class CustomTheme {
 
   // colors
   static Color lightThemeColor = Colors.red,
-      white = Colors.white,
-      black = Colors.black,
+      white = Colors.grey.shade300,
+      black = const Color.fromARGB(255, 20, 20, 20),
       darkThemeColor = Colors.yellow;
 }
