@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/auth/register_page.dart';
+import 'package:food_delivery/screens/home_page.dart';
+import 'package:food_delivery/widgets/animated_text.dart';
 import 'package:food_delivery/widgets/input_text.dart';
 import 'package:get/get.dart';
 import '../Themes/custom_theme.dart';
@@ -18,8 +20,11 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Page'),
+        // title: const Text('Login Page'),
         actions: [
+          ElevatedButton(
+              onPressed: () => Get.to(() => const HomePage()),
+              child: const Text('Home Page')),
           Obx(() {
             return Switch(
               value: controller.theme.value,
@@ -29,7 +34,8 @@ class LoginPage extends StatelessWidget {
               },
               activeColor: CustomTheme.white,
             );
-          })
+          }),
+          const SizedBox(width: 10),
         ],
       ),
       body: Form(
@@ -39,16 +45,20 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.lock_open_rounded,
-                  size: 100,
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                const ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  child: SizedBox(
+                    width: 300,
+                    child: AnimatedText(
+                      text: 'Login',
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'Food Delivery App',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 30,
                       color: Theme.of(context).colorScheme.inverseSurface),
                 ),
                 const SizedBox(height: 20),

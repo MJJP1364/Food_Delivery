@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../widgets/animated_text.dart';
 import '../widgets/input_text.dart';
 import '../widgets/myButton.dart';
 import 'auth_controller.dart';
@@ -15,7 +16,14 @@ class RegisterPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Register Page'),
+        // title: const Text('Register Page'),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+              onPressed: () => Get.back(),
+              icon: const Icon(Icons.arrow_forward_ios_sharp)),
+          const SizedBox(width: 10),
+        ],
       ),
       body: Form(
         key: formKey,
@@ -24,10 +32,14 @@ class RegisterPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.lock_open_rounded,
-                  size: 100,
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                const ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  child: SizedBox(
+                    width: 300,
+                    child: AnimatedText(
+                      text: 'Register!',
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Text(
