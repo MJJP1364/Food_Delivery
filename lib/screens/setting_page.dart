@@ -33,7 +33,7 @@ class SettingPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text('Light Theme',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                        style: TextStyle(fontSize: 15, color: Colors.white)),
                     const SizedBox(width: 15),
                     Obx(() {
                       return Switch(
@@ -48,7 +48,7 @@ class SettingPage extends StatelessWidget {
                     const SizedBox(width: 15),
                     const Text('Dark Theme',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           color: Colors.black,
                         )),
                   ],

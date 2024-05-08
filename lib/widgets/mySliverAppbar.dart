@@ -20,7 +20,7 @@ class MySliverAppbar extends StatelessWidget {
         IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
       ],
       expandedHeight: 340,
-      collapsedHeight: 80,
+      collapsedHeight: 100,
       floating: false,
       pinned: false,
       title: title1,

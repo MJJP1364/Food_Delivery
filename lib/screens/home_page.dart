@@ -33,12 +33,6 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Divider(
-                        endIndent: 20,
-                        indent: 20,
-                        thickness: 2,
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
                       // my current location
                       MyCurrentLocation(),
 
