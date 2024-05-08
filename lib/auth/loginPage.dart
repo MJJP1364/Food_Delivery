@@ -4,8 +4,6 @@ import 'package:food_delivery/screens/home_page.dart';
 import 'package:food_delivery/widgets/animated_text.dart';
 import 'package:food_delivery/widgets/input_text.dart';
 import 'package:get/get.dart';
-import '../Themes/custom_theme.dart';
-import '../Themes/theme_controller.dart';
 import '../widgets/myButton.dart';
 import 'auth_controller.dart';
 
@@ -14,7 +12,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ThemeController());
     final authController = Get.put(AuthController());
     final formKey = GlobalKey<FormState>();
 
@@ -25,17 +22,6 @@ class LoginPage extends StatelessWidget {
           ElevatedButton(
               onPressed: () => Get.to(() => const HomePage()),
               child: const Text('Home Page')),
-          Obx(() {
-            return Switch(
-              value: controller.theme.value,
-              onChanged: (value) {
-                controller.switchTheme();
-                Get.changeThemeMode(controller.currentTheme.value);
-              },
-              activeColor: CustomTheme.white,
-            );
-          }),
-          const SizedBox(width: 10),
         ],
       ),
       body: Form(
@@ -76,12 +62,10 @@ class LoginPage extends StatelessWidget {
                       hint: 'Enter Password',
                       controller: authController.passwordController,
                       lable: 'password',
-
                       icon: Icons.password_rounded,
-                      obsecured: authController.sufixIcon.value,
-                      onTap: authController.sufixIconMethod,
-                      // ignore: unrelated_type_equality_checks
-                      sufixe: authController.sufixIcon == false
+                      obsecured: authController.passwordSufixIcon.value,
+                      onTap: authController.passwordSufixIconMethod,
+                      sufixe: authController.passwordSufixIcon.value == false
                           ? Icons.remove_red_eye
                           : Icons.remove_red_eye_outlined,
                     );

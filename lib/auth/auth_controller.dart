@@ -7,9 +7,14 @@ class AuthController extends GetxController {
   final comfrimPasswordController = TextEditingController();
   final nameController = TextEditingController();
   final fullNameController = TextEditingController();
-  RxBool sufixIcon = true.obs;
+  RxBool passwordSufixIcon = true.obs;
+  RxBool confrimPasswordSufixIcon = true.obs;
 
-  void sufixIconMethod() {
-    sufixIcon.value = !sufixIcon.value;
+  void passwordSufixIconMethod() {
+    passwordSufixIcon.value = !passwordSufixIcon.value;
+  }
+
+  void confrimPasswordSufixIconMethod() {
+    confrimPasswordSufixIcon.value = !confrimPasswordSufixIcon.value;
   }
 }

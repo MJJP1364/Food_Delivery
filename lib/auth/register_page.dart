@@ -79,12 +79,10 @@ class RegisterPage extends StatelessWidget {
                       hint: 'Enter Password',
                       controller: authController.passwordController,
                       lable: 'password',
-
                       icon: Icons.password_rounded,
-                      obsecured: authController.sufixIcon.value,
-                      onTap: authController.sufixIconMethod,
-                      // ignore: unrelated_type_equality_checks
-                      sufixe: authController.sufixIcon == false
+                      obsecured: authController.passwordSufixIcon.value,
+                      onTap: authController.passwordSufixIconMethod,
+                      sufixe: authController.passwordSufixIcon.value == false
                           ? Icons.remove_red_eye
                           : Icons.remove_red_eye_outlined,
                     );
@@ -99,12 +97,13 @@ class RegisterPage extends StatelessWidget {
                       lable: 'comfrim password',
 
                       icon: Icons.password_rounded,
-                      obsecured: authController.sufixIcon.value,
-                      onTap: authController.sufixIconMethod,
+                      obsecured: authController.confrimPasswordSufixIcon.value,
+                      onTap: authController.confrimPasswordSufixIconMethod,
                       // ignore: unrelated_type_equality_checks
-                      sufixe: authController.sufixIcon == false
-                          ? Icons.remove_red_eye
-                          : Icons.remove_red_eye_outlined,
+                      sufixe:
+                          authController.confrimPasswordSufixIcon.value == false
+                              ? Icons.remove_red_eye
+                              : Icons.remove_red_eye_outlined,
                     );
                   },
                 ),
