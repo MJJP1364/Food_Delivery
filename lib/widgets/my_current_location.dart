@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyCurrentLocation extends StatelessWidget {
-  const MyCurrentLocation({super.key});
+import '../controllers/home_controller.dart';
 
+class MyCurrentLocation extends StatelessWidget {
+  MyCurrentLocation({super.key});
+
+  final controller = Get.put(Homecontroller());
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,8 +46,9 @@ class MyCurrentLocation extends StatelessWidget {
       builder: (context) => AlertDialog(
         shadowColor: Colors.red,
         title: const Text('Your Location'),
-        content: const TextField(
-          decoration: InputDecoration(
+        content: TextField(
+          controller: controller.searchLocationTextController,
+          decoration: const InputDecoration(
             hintText: 'Search Address',
           ),
         ),

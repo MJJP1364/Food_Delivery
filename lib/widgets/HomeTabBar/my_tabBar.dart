@@ -6,16 +6,13 @@ class MyTabBar extends StatelessWidget {
   const MyTabBar({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     final MyTabController _tabx = Get.put(MyTabController());
-
     return TabBar(
       controller: _tabx.controller,
       tabs: const [
         Tab(child: Icon(Icons.home)),
-
         // 2nd tab
         Tab(child: Icon(Icons.settings)),
       ],

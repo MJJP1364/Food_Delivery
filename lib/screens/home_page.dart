@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                         color: Theme.of(context).colorScheme.secondary,
                       ),
                       // my current location
-                      const MyCurrentLocation(),
+                      MyCurrentLocation(),
 
                       // description box
                       const MyDescriptionBox(),
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
               ],
           body: TabBarView(
             controller: tabx.controller,
-            children: [
+            children: const [
               HomeTab(),
               SettingTab(),
             ],
