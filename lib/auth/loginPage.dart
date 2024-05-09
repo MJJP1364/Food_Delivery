@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/auth/register_page.dart';
+import 'package:food_delivery/screens/home_page.dart';
+import 'package:food_delivery/widgets/animated_text.dart';
 import 'package:food_delivery/widgets/input_text.dart';
 import 'package:get/get.dart';
-import '../Themes/custom_theme.dart';
-import '../Themes/theme_controller.dart';
 import '../widgets/myButton.dart';
 import 'auth_controller.dart';
 
@@ -12,24 +12,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ThemeController());
     final authController = Get.put(AuthController());
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Page'),
+        // title: const Text('Login Page'),
         actions: [
-          Obx(() {
-            return Switch(
-              value: controller.theme.value,
-              onChanged: (value) {
-                controller.switchTheme();
-                Get.changeThemeMode(controller.currentTheme.value);
-              },
-              activeColor: CustomTheme.white,
-            );
-          })
+          ElevatedButton(
+              onPressed: () => Get.to(() => const HomePage()),
+              child: const Text('Home Page')),
         ],
       ),
       body: Form(
@@ -39,16 +31,20 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.lock_open_rounded,
-                  size: 100,
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                const ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  child: SizedBox(
+                    width: 300,
+                    child: AnimatedText(
+                      text: 'Login',
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Text(
                   'Food Delivery App',
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 30,
                       color: Theme.of(context).colorScheme.inverseSurface),
                 ),
                 const SizedBox(height: 20),
@@ -66,12 +62,10 @@ class LoginPage extends StatelessWidget {
                       hint: 'Enter Password',
                       controller: authController.passwordController,
                       lable: 'password',
-
                       icon: Icons.password_rounded,
-                      obsecured: authController.sufixIcon.value,
-                      onTap: authController.sufixIconMethod,
-                      // ignore: unrelated_type_equality_checks
-                      sufixe: authController.sufixIcon == false
+                      obsecured: authController.passwordSufixIcon.value,
+                      onTap: authController.passwordSufixIconMethod,
+                      sufixe: authController.passwordSufixIcon.value == false
                           ? Icons.remove_red_eye
                           : Icons.remove_red_eye_outlined,
                     );

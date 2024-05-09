@@ -13,7 +13,7 @@ class CustomTheme {
     fontFamily: lightThemeFont,
     switchTheme: SwitchThemeData(
       thumbColor: MaterialStateProperty.resolveWith<Color>(
-          (states) => lightThemeColor), // 
+          (states) => lightThemeColor), //
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
@@ -38,7 +38,7 @@ class CustomTheme {
   static final darkTheme = ThemeData(
     primaryColor: darkThemeColor, //
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: const Color.fromARGB(255, 20, 20, 20),
+    scaffoldBackgroundColor: const Color(0xff032030),
     useMaterial3: true,
     fontFamily: darkThemeFont,
     switchTheme: SwitchThemeData(
@@ -47,7 +47,7 @@ class CustomTheme {
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: const Color.fromARGB(255, 20, 20, 20),
+      backgroundColor: const Color(0xff032030),
       scrolledUnderElevation: 0,
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class CustomTheme {
       elevation: 0,
       actionsIconTheme: IconThemeData(color: darkThemeColor), //
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: Color.fromARGB(255, 20, 20, 20),
+        statusBarColor: Color(0xff032030),
         statusBarIconBrightness: Brightness.light,
       ),
     ),
@@ -67,6 +67,6 @@ class CustomTheme {
   // colors
   static Color lightThemeColor = Colors.red,
       white = Colors.grey.shade300,
-      black = const Color.fromARGB(255, 20, 20, 20),
+      black = const Color(0xff032030),
       darkThemeColor = Colors.yellow;
 }

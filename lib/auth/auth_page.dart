@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'home_page.dart';
+import '../screens/home_page.dart';
 import 'loginPage.dart';
 
 // ignore: must_be_immutable
