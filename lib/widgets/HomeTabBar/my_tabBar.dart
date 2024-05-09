@@ -8,9 +8,9 @@ class MyTabBar extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final MyTabController _tabx = Get.put(MyTabController());
+    final MyTabController tabx = Get.put(MyTabController());
     return TabBar(
-      controller: _tabx.controller,
+      controller: tabx.controller,
       tabs: const [
         Tab(child: Icon(Icons.home)),
         // 2nd tab

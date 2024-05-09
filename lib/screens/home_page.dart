@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_delivery/controllers/home_controller.dart';
 import 'package:food_delivery/widgets/mySliverAppbar.dart';
 import 'package:food_delivery/widgets/my_current_location.dart';
 import 'package:food_delivery/widgets/my_description_box.dart';
@@ -16,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(Homecontroller());
+    // final controller = Get.put(Homecontroller());
     final MyTabController tabx = Get.put(MyTabController());
 
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -35,7 +34,6 @@ class HomePage extends StatelessWidget {
                     children: [
                       // my current location
                       MyCurrentLocation(),
-
                       // description box
                       const MyDescriptionBox(),
                     ],

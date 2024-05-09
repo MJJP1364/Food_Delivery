@@ -14,8 +14,6 @@ class MySliverAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      // automaticallyImplyLeading: false,
-
       actions: [
         IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
       ],
