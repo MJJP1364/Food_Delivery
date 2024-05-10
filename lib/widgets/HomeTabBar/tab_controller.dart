@@ -11,7 +11,7 @@ class MyTabController extends GetxController
     controller = TabController(
       animationDuration: const Duration(milliseconds: 900),
       vsync: this,
-      length: 2,
+      length: 3,
     );
   }
 
