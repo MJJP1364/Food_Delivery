@@ -1,7 +1,11 @@
-import 'food_model.dart';
+import 'package:get/get.dart';
 
-class Resturant {
-  final List<Food> _menu = [
+import '../models/food_model.dart';
+
+class ResturantController extends GetxController {
+  // variables
+
+  final RxList<Food> menu = [
     // Burger
     Food(
       name: 'Classic CheeseBurger',
@@ -459,5 +463,38 @@ class Resturant {
         Addone(name: 'Ginger Zest', price: 1.99),
       ],
     ),
-  ];
+  ].obs;
+
+  /* 
+
+    GETTER
+
+  */
+
+  // List<Food> get menu => _menu;
+  /* 
+    OPERATION
+
+  */
+
+  // add to cart
+
+  // remove from cart
+
+  // get total price from cart
+
+  // get total number item from cart
+
+  // clear cart
+
+  /* 
+    HELPERS
+
+  */
+
+  // generat a recipt
+
+  // format double value to mony
+
+  // format list of addons into a string summary
 }

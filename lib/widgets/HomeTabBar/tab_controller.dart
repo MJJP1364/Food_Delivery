@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/models/food_model.dart';
 import 'package:get/get.dart';
 
 class MyTabController extends GetxController
@@ -11,7 +12,7 @@ class MyTabController extends GetxController
     controller = TabController(
       animationDuration: const Duration(milliseconds: 900),
       vsync: this,
-      length: 3,
+      length: FoodCategory.values.length,
     );
   }
 

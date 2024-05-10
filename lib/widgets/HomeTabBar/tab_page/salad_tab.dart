@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SettingTab extends StatelessWidget {
-  const SettingTab({super.key});
+class SaladTab extends StatelessWidget {
+  const SaladTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Setting Tab'),
+      child: Text('Salad Tab'),
     );
   }
 }
