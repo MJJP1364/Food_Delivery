@@ -38,7 +38,7 @@ class CustomTheme {
   static final darkTheme = ThemeData(
     primaryColor: darkThemeColor, //
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: const Color(0xff032030),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 20, 20, 20),
     useMaterial3: true,
     fontFamily: darkThemeFont,
     switchTheme: SwitchThemeData(
@@ -47,7 +47,7 @@ class CustomTheme {
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: const Color(0xff032030),
+      backgroundColor: const Color.fromARGB(255, 20, 20, 20),
       scrolledUnderElevation: 0,
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class CustomTheme {
       elevation: 0,
       actionsIconTheme: IconThemeData(color: darkThemeColor), //
       systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: Color(0xff032030),
+        statusBarColor: Color.fromARGB(255, 20, 20, 20),
         statusBarIconBrightness: Brightness.light,
       ),
     ),
@@ -67,6 +67,6 @@ class CustomTheme {
   // colors
   static Color lightThemeColor = Colors.red,
       white = Colors.grey.shade300,
-      black = const Color(0xff032030),
+      black = const Color.fromARGB(255, 20, 20, 20),
       darkThemeColor = Colors.yellow;
 }

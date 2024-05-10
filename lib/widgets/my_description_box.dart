@@ -5,10 +5,12 @@ class MyDescriptionBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var myPrimaryTextStyle =
-        TextStyle(color: Theme.of(context).colorScheme.inversePrimary);
-    var mySecondaryTextStyle =
-        TextStyle(color: Theme.of(context).colorScheme.primary);
+    // var myPrimaryTextStyle =
+    //     TextStyle(color: Theme.of(context).colorScheme.inversePrimary);
+    var mySecondaryTextStyle = TextStyle(
+      color: Theme.of(context).colorScheme.primary,
+      fontSize: 20,
+    );
     return Container(
       decoration: BoxDecoration(
           border:
@@ -16,7 +18,7 @@ class MyDescriptionBox extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(20))),
       margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
       child: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.all(20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -25,7 +27,7 @@ class MyDescriptionBox extends StatelessWidget {
               children: [
                 Text(
                   '\$0.99',
-                  style: myPrimaryTextStyle,
+                  style: mySecondaryTextStyle,
                 ),
                 Text(
                   'Delivery fee',
@@ -39,7 +41,7 @@ class MyDescriptionBox extends StatelessWidget {
               children: [
                 Text(
                   '15-30 min',
-                  style: myPrimaryTextStyle,
+                  style: mySecondaryTextStyle,
                 ),
                 Text(
                   'Delivery time',

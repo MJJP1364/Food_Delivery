@@ -3,7 +3,7 @@
 class Food {
   final String name;
   final String description;
-  final String price;
+  final double price;
   final String imagePath;
   final FoodCategory category;
   final List<Addone> avalebleAddones;
@@ -28,7 +28,7 @@ enum FoodCategory {
 
 class Addone {
   final String name;
-  final String price;
+  final double price;
   Addone({
     required this.name,
     required this.price,
