@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_delivery/widgets/HomeTabBar/person_tab.dart';
 import 'package:food_delivery/widgets/mySliverAppbar.dart';
 import 'package:food_delivery/widgets/my_current_location.dart';
 import 'package:food_delivery/widgets/my_description_box.dart';
 import 'package:food_delivery/widgets/HomeTabBar/my_tabBar.dart';
 import 'package:get/get.dart';
-import '../widgets/HomeTabBar/home_tabBar.dart';
-import '../widgets/HomeTabBar/setting_tabBar.dart';
+import '../widgets/HomeTabBar/home_tab.dart';
+import '../widgets/HomeTabBar/setting_tab.dart';
 import '../widgets/HomeTabBar/tab_controller.dart';
 import '../widgets/my_drawer.dart';
 
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
             children: const [
               HomeTab(),
               SettingTab(),
+              PersonTab(),
             ],
           )),
     );
