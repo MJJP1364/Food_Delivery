@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class MyTabController extends GetxController
     with GetSingleTickerProviderStateMixin {
-  late TabController controller;
+ late TabController controller;
 
   @override
   void onInit() {

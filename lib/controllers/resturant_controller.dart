@@ -5,14 +5,14 @@ import '../models/food_model.dart';
 class ResturantController extends GetxController {
   // variables
 
-  final RxList<Food> menu = [
+  RxList<Food> burgers = [
     // Burger
     Food(
       name: 'Classic CheeseBurger',
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 8.99,
-      imagePath: 'assets/images/burges/burger1.png',
+      imagePath: 'assets/images/burgers/burger1.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 0.99),
@@ -25,7 +25,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 10.99,
-      imagePath: 'assets/images/burges/burger2.png',
+      imagePath: 'assets/images/burgers/burger2.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 0.75),
@@ -38,7 +38,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 11.99,
-      imagePath: 'assets/images/burges/burger3.png',
+      imagePath: 'assets/images/burgers/burger3.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 0.89),
@@ -51,7 +51,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 10.50,
-      imagePath: 'assets/images/burges/burger4.png',
+      imagePath: 'assets/images/burgers/burger4.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 0.74),
@@ -64,7 +64,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 9.50,
-      imagePath: 'assets/images/burges/burger5.png',
+      imagePath: 'assets/images/burgers/burger5.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 1.45),
@@ -77,7 +77,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 12.85,
-      imagePath: 'assets/images/burges/burger6.png',
+      imagePath: 'assets/images/burgers/burger6.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 1.50),
@@ -90,7 +90,7 @@ class ResturantController extends GetxController {
       description:
           'A juicy beef party melted cheddar , lettuce , tomato , and a hint of onion and pickle.',
       price: 13.20,
-      imagePath: 'assets/images/burges/burger7.png',
+      imagePath: 'assets/images/burgers/burger7.png',
       category: FoodCategory.burgers,
       avalebleAddones: [
         Addone(name: 'Extra Cheeses', price: 2.99),
@@ -98,8 +98,9 @@ class ResturantController extends GetxController {
         Addone(name: 'Avocado', price: 3.99),
       ],
     ),
-
-    // salads
+  ].obs;
+  // salads
+  RxList<Food> salads = [
     Food(
       name: 'Caesar Salad',
       description:
@@ -191,8 +192,10 @@ class ResturantController extends GetxController {
         Addone(name: 'Extra Parmesan', price: 1.99),
       ],
     ),
+  ].obs;
 
-    // Sides
+  // Sides
+  RxList<Food> sides = [
     Food(
       name: 'Sweet Potato Fiers',
       description: 'Cerips Sweet Potato Fiers with a touch of salt ',
@@ -277,8 +280,10 @@ class ResturantController extends GetxController {
         Addone(name: 'Cajun Spice', price: 1.99),
       ],
     ),
+  ].obs;
 
-    // desserts
+  // desserts
+  RxList<Food> deserts = [
     Food(
       name: 'Apple Pie',
       description:
@@ -370,8 +375,10 @@ class ResturantController extends GetxController {
         Addone(name: 'Cinammon Spice', price: 1.99),
       ],
     ),
+  ].obs;
 
-    // Drinks
+  // Drinks
+  RxList<Food> drinks = [
     Food(
       name: 'Lemonade',
       description:
