@@ -20,6 +20,14 @@ class MyTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final MyTabController tabx = Get.put(MyTabController());
     return TabBar(
+      overlayColor: const MaterialStatePropertyAll(Colors.grey),
+      splashBorderRadius: BorderRadius.circular(10),
+      labelStyle: const TextStyle(
+        color: Colors.blue,
+        fontSize: 25,
+      ),
+      unselectedLabelColor: Colors.grey,
+      unselectedLabelStyle: const TextStyle(fontSize: 15),
       isScrollable: true,
       controller: tabx.controller,
       tabs: buildCategoryTabs(),
