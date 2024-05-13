@@ -23,6 +23,8 @@ class TabsListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      splashColor: Colors.green.withOpacity(0.1),
+      dense: true,
       onTap: onTap,
       title: Row(
         children: [
@@ -44,11 +46,11 @@ class TabsListTile extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SizedBox(
-                width: 200,
+                width: 230,
                 child: Text(
+                  softWrap: true,
                   description,
-                  maxLines: 5,
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.start,
                 ),
               ),
             ],

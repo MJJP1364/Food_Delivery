@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/food_page.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/resturant_controller.dart';
@@ -11,14 +12,28 @@ class SaladTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ResturantController());
     return ListView.separated(
-      itemBuilder: (context, index) => TabsListTile(
-        controller: controller,
-        name: controller.salads[index].name,
-        price: '\$ ${controller.salads[index].price}',
-        description: controller.salads[index].description,
-        image: controller.salads[index].imagePath,
-        onTap: () {},
-      ),
+      padding: EdgeInsets.zero,
+      itemBuilder: (context, index) {
+        var data = controller.salads[index];
+        return TabsListTile(
+          controller: controller,
+          name: data.name,
+          price: '\$ ${data.price}',
+          description: data.description,
+          image: data.imagePath,
+          onTap: () => Get.to(() => const FoodPage(),
+              duration: const Duration(milliseconds: 950),
+              curve: Curves.easeInOutSine,
+              transition: Transition.upToDown,
+              arguments: {
+                'imagePath': data.imagePath,
+                'name': data.name.toString(),
+                'description': data.description.toString(),
+                'price': data.price.toString(),
+                'addone': data.avalebleAddones,
+              }),
+        );
+      },
       separatorBuilder: (context, index) => Divider(
         indent: 25,
         endIndent: 25,

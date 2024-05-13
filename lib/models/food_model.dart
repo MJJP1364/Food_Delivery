@@ -29,8 +29,10 @@ enum FoodCategory {
 class Addone {
   final String name;
   final double price;
+  final bool? checked;
   Addone({
     required this.name,
     required this.price,
+    this.checked,
   });
 }
