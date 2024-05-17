@@ -21,17 +21,45 @@ class _FoodPageState extends State<FoodPage> {
         child: SafeArea(
           child: Column(
             children: [
-              Container(
-                  width: double.infinity,
-                  height: 260,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.onInverseSurface,
-                    borderRadius: const BorderRadius.all(Radius.circular(25)),
+              Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 260,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.onInverseSurface,
+                      borderRadius: const BorderRadius.all(Radius.circular(25)),
+                    ),
+                    child: Image.asset(
+                      // data['imagePath'],
+                      controller.foodData[0],
+                    ),
                   ),
-                  child: Image.asset(
-                    // data['imagePath'],
-                    controller.foodData[0],
-                  )),
+                  Positioned(
+                    left: 15,
+                    top: 15,
+                    child: Opacity(
+                      opacity: 0.6,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color:
+                                Theme.of(context).colorScheme.inverseSurface),
+                        child: IconButton(
+                            alignment: Alignment.center,
+                            onPressed: () => Get.back(),
+                            icon: Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
+                            )),
+                      ),
+                    ),
+                  )
+                ],
+              ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 20),

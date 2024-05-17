@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+import 'package:food_delivery/models/cart_item.dart';
 import 'package:get/get.dart';
 
 import '../models/food_model.dart';
@@ -486,15 +488,69 @@ class ResturantController extends GetxController {
 
   */
 
+  final List<CartItem> _cart = [];
+
   // add to cart
+
+  void addToCart(Food food, List<Addone> selectAddone) {
+    CartItem? cartItem = _cart.firstWhereOrNull((item) {
+      // check if the food item are the same
+      bool isSameFood = item.food == food;
+      //check if thelist of selected addone are the same
+      bool isSameAddones =
+          const ListEquality().equals(item.selectAddone, selectAddone);
+      return isSameFood && isSameAddones;
+    });
+    if (cartItem != null) {
+      cartItem.quantity++;
+    } else {
+      _cart.add(
+        CartItem(food: food, selectAddone: selectAddone),
+      );
+    }
+  }
 
   // remove from cart
 
+  void removeFromCard(CartItem cartItem) {
+    int cartIndex = _cart.indexOf(cartItem);
+    if (cartIndex != -1) {
+      if (_cart[cartIndex].quantity > 1) {
+        _cart[cartIndex].quantity--;
+      } else {
+        _cart.removeAt(cartIndex);
+      }
+    }
+  }
+
   // get total price from cart
+
+  double totalParice() {
+    double total = 0.0;
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+      for (Addone addone in cartItem.selectAddone) {
+        itemTotal += addone.price;
+      }
+      total += itemTotal * cartItem.quantity;
+    }
+    return total;
+  }
 
   // get total number item from cart
 
+  int getTotaleItemCont() {
+    int totalItemCont = 0;
+    for (CartItem cartItem in _cart) {
+      totalItemCont += cartItem.quantity;
+    }
+    return totalItemCont;
+  }
+
   // clear cart
+  void clearCart() {
+    _cart.clear();
+  }
 
   /* 
     HELPERS

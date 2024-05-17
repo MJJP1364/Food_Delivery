@@ -19,11 +19,11 @@ class MyDrawerTile extends StatelessWidget {
         splashColor: Colors.blue.withOpacity(0.1),
         title: Text(
           text,
-          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+          style: TextStyle(color: Theme.of(context).colorScheme.inverseSurface),
         ),
         leading: Icon(
           icon,
-          color: Theme.of(context).colorScheme.inversePrimary,
+          color: Colors.red,
         ),
         onTap: onTap,
       ),
