@@ -19,9 +19,10 @@ class MySliverAppbar extends StatelessWidget {
       ],
       expandedHeight: 340,
       collapsedHeight: 100,
-      floating: false,
+      floating: true,
       pinned: false,
       title: title1,
+     
       // backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
       flexibleSpace: FlexibleSpaceBar(

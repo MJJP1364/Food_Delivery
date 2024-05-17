@@ -10,10 +10,8 @@ import 'auth/auth_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-  ));
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
   await dotenv.load();
   String supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
