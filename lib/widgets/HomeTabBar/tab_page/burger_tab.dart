@@ -22,6 +22,10 @@ class BurgerTab extends StatelessWidget {
             description: data.description,
             image: data.imagePath,
             onTap: () {
+              data.avalebleAddones[0].checked = false;
+              data.avalebleAddones[1].checked = false;
+              data.avalebleAddones[2].checked = false;
+
               controller.foodData.clear();
               controller.foodData.addAll([
                 data.imagePath,

@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ThemeController());
     return GetMaterialApp(
+     
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
       theme: CustomTheme.lightTheme,

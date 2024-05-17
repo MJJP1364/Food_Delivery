@@ -34,7 +34,7 @@ class SaladTab extends StatelessWidget {
                 () => const FoodPage(),
                 duration: const Duration(milliseconds: 950),
                 curve: Curves.easeInOutSine,
-                transition: Transition.upToDown,
+                  transition: Transition.rightToLeft,
               );
             });
       },

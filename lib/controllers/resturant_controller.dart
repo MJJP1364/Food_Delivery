@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import '../models/food_model.dart';
 
 class ResturantController extends GetxController {
-
   // variables
   RxList foodData = [].obs;
+
   RxList<Food> burgers = [
     // Burger
     Food(
