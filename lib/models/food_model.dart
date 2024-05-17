@@ -6,7 +6,8 @@ class Food {
   final double price;
   final String imagePath;
   final FoodCategory category;
-  final List<Addone> avalebleAddones;
+  List<Addone> avalebleAddones;
+
   Food({
     required this.name,
     required this.description,
@@ -29,10 +30,10 @@ enum FoodCategory {
 class Addone {
   final String name;
   final double price;
-  final bool? checked;
+  bool checked;
   Addone({
     required this.name,
     required this.price,
-    this.checked,
+    required this.checked,
   });
 }

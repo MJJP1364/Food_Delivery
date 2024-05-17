@@ -15,23 +15,27 @@ class SideTab extends StatelessWidget {
       itemBuilder: (context, index) {
         var data = controller.sides[index];
         return TabsListTile(
-          controller: controller,
-          name: data.name,
-          price: '\$ ${data.price}',
-          description: data.description,
-          image: data.imagePath,
-          onTap: () => Get.to(() => const FoodPage(),
-              duration: const Duration(milliseconds: 950),
-              curve: Curves.easeInOutSine,
-              transition: Transition.upToDown,
-              arguments: {
-                'imagePath': data.imagePath,
-                'name': data.name.toString(),
-                'description': data.description.toString(),
-                'price': data.price.toString(),
-                'addone': data.avalebleAddones,
-              }),
-        );
+            controller: controller,
+            name: data.name,
+            price: '\$ ${data.price}',
+            description: data.description,
+            image: data.imagePath,
+            onTap: () {
+              controller.foodData.clear();
+              controller.foodData.addAll([
+                data.imagePath,
+                data.name.toString(),
+                data.price.toString(),
+                data.description.toString(),
+                data.avalebleAddones.toList(),
+              ]);
+              Get.to(
+                () => const FoodPage(),
+                duration: const Duration(milliseconds: 950),
+                curve: Curves.easeInOutSine,
+                transition: Transition.upToDown,
+              );
+            });
       },
       separatorBuilder: (context, index) => Divider(
         indent: 25,
